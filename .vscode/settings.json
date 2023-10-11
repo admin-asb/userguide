@@ -1,0 +1,8 @@
+{
+  "typescript.autoClosingTags": false,
+  "javascript.autoClosingTags": false,
+  "typescript.preferences.renameMatchingJsxTags": false,
+  "typescript.preferences.jsxAttributeCompletionStyle": "none",
+  "javascript.preferences.renameMatchingJsxTags": true,
+  "javascript.preferences.jsxAttributeCompletionStyle": "none"
+}

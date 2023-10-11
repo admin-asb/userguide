@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/static/css/main.0d8e76f5.css",
+    "main.js": "/static/js/main.6156676c.js",
+    "static/media/offlinex2.png": "/static/media/offlinex2.a438de8675b3a11f7115.png",
+    "static/media/get-win-imgx2.png": "/static/media/get-win-imgx2.64bf3c5a21d24d33c24d.png",
+    "static/media/faq-imgx2.png": "/static/media/faq-imgx2.c89771ff18a43b5d3b74.png",
+    "static/media/check-win-imgx2.png": "/static/media/check-win-imgx2.884a91ed2be9eea63c88.png",
+    "static/media/run-imgx2.png": "/static/media/run-imgx2.1238d6dacb397fe7d097.png",
+    "static/media/onlinex2.png": "/static/media/onlinex2.8b1d8dc06ec35c739eaa.png",
+    "static/media/subscriptionx2.png": "/static/media/subscriptionx2.c1dcd2c952a065b743cb.png",
+    "static/media/bonus.svg": "/static/media/bonus.152ed4f32eab904b671633325e44d527.svg",
+    "static/media/shield.svg": "/static/media/shield.2c247e3432459f9f416ee5bc793995f6.svg",
+    "static/media/wallet.svg": "/static/media/wallet.628506b5f67a288c59c0ae99f0c33bc6.svg",
+    "static/media/emoji.svg": "/static/media/emoji.6d16d85d35b1a510fb208a4a34799703.svg",
+    "index.html": "/index.html",
+    "static/media/download.svg": "/static/media/download.249fae4ee7aa8c18d2910559c7cf9da6.svg",
+    "static/media/icon-close.svg": "/static/media/icon-close.52ca4d26614ccb7ae5449f1f373b079e.svg",
+    "main.0d8e76f5.css.map": "/static/css/main.0d8e76f5.css.map",
+    "main.6156676c.js.map": "/static/js/main.6156676c.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.0d8e76f5.css",
+    "static/js/main.6156676c.js"
+  ]
+}

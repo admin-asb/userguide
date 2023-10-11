@@ -1,0 +1,40 @@
+.header {
+  height: 46px;
+}
+
+.container {
+  padding: 8px;
+}
+
+.header button {
+  border: none;
+}
+
+.arrow {
+  width: 32px;
+  height: 32px;
+  background-color: rgba(0, 51, 153, 0.1);
+  position: relative;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+.arrow::after {
+  content: "";
+  width: 10px;
+  height: 10px;
+  border-top: 2px solid #000;
+  border-right: 2px solid #000;
+  position: absolute;
+  top: 50%;
+  right: 23%;
+  z-index: 1;
+  transform: translateY(-50%) rotate(225deg);
+}
+
+@media (min-width: 1024px) {
+  .container {
+    max-width: 360px;
+    margin: 0 auto;
+  }
+}

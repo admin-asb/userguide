@@ -1,0 +1,33 @@
+.rules h3 {
+  margin-top: 24px;
+  margin-bottom: 16px;
+}
+
+.rules__box {
+  margin-bottom: 8px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  border-radius: 10px;
+  background: #dbe3f5;
+  padding: 10px 15px;
+}
+
+.rules__box:last-child {
+  margin-bottom: 0;
+}
+
+.rules__box p {
+  margin-top: 0;
+  color: var(--, #000);
+  font-family: Nunito;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 16px;
+}
+
+.rules__box:last-child p {
+  width: 100%;
+}
