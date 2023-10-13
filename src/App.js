@@ -9,6 +9,7 @@ import Rights from "./components/Redirect/Rules/Rights";
 import WalletRules from "./components/Redirect/Rules/WalletRules";
 import Questions from "./components/Redirect/FAQ/Questions";
 import SmsPurchase from "./components/Redirect/Purchase/SmsPurchase";
+import GetWinning from "./components/Redirect/Winnings/GetWinning";
 
 const router = createBrowserRouter([
   {
@@ -24,6 +25,7 @@ const router = createBrowserRouter([
       { path: "/wallet-rules", element: <WalletRules /> },
       { path: "/faq", element: <Questions /> },
       { path: "/sms", element: <SmsPurchase /> },
+      { path: "/get-win", element: <GetWinning /> },
     ],
   },
 ]);

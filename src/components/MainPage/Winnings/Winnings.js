@@ -3,8 +3,12 @@ import checkWinImg from "../../../assets/check-win-img.png";
 import checkWinImg2 from "../../../assets/check-win-imgx2.png";
 import getWinImg from "../../../assets/get-win-img.png";
 import getWinImg2 from "../../../assets/get-win-imgx2.png";
+import { useContext } from "react";
+import NavigationContext from "../../../store/navigation-context";
 
 const Winnings = () => {
+  const navCtx = useContext(NavigationContext);
+
   return (
     <section className={classes.winnings}>
       <h3> Выигрыши </h3>{" "}
@@ -20,7 +24,9 @@ const Winnings = () => {
           alt="A picture of Win Checking box"
         />
       </div>{" "}
-      <div className={classes["winning__box"]}>
+      <div
+        className={classes["winning__box"]}
+        onClick={() => navCtx.onNavigate("get-win")}>
         {" "}
         <p>
           {" "}

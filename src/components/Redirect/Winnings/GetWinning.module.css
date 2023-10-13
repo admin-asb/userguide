@@ -1,0 +1,81 @@
+.transition {
+  margin-top: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.box {
+  border-radius: 8px;
+  border: 1px solid #a8beea;
+  background: #fff;
+  padding: 11px 19px;
+  color: #a8beea;
+  text-align: center;
+  font-family: Nunito;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 16px;
+  position: relative;
+}
+
+.box.active {
+  border-radius: 8px;
+  border: 1px solid, #1249b5;
+  background: #1249b5;
+  color: #fff;
+}
+
+.box::after {
+  background: #a8beea;
+  content: "";
+  width: 120px;
+  height: 1px;
+  top: 50%;
+  position: absolute;
+  left: 100%;
+  transform: translateY(-50%);
+}
+
+.box.completed {
+  border-radius: 8px;
+  border: 1px solid #0abe68;
+  background: #0abe68;
+}
+
+.box.completed::before {
+  content: "";
+  background: url("../../../assets/tick.svg");
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 3;
+}
+
+.box.completed::after {
+  background: linear-gradient(270deg, #039 0%, #0abe68 100%), #039;
+}
+
+.box:last-child::after {
+  display: none;
+}
+
+.how__wrapper {
+  padding-top: 8px;
+}
+
+.blue-box {
+  margin-top: 8px;
+  height: 120px;
+  border-radius: 12px;
+  background: #dbe3f5;
+  padding: 14px 16px;
+  color: var(--ui-kit-react-black, #111318);
+  font-family: Nunito;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 22px;
+}
