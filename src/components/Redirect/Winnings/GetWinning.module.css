@@ -18,19 +18,43 @@
   font-weight: 700;
   line-height: 16px;
   position: relative;
+  width: 32px;
+  height: 32px;
+  padding: 11px 19px;
+}
+
+.box::before {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  z-index: 3;
+}
+
+.box1::before {
+  content: "1";
+}
+
+.box2::before {
+  content: "2";
+}
+
+.box3::before {
+  content: "3";
 }
 
 .box.active {
+  color: #fff;
   border-radius: 8px;
   border: 1px solid, #1249b5;
   background: #1249b5;
-  color: #fff;
 }
 
 .box::after {
   background: #a8beea;
   content: "";
-  width: 120px;
+  width: 143px;
   height: 1px;
   top: 50%;
   position: absolute;
@@ -45,17 +69,21 @@
 }
 
 .box.completed::before {
-  content: "";
-  background: url("../../../assets/tick.svg");
+  content: url("../../../assets/tick.svg");
   position: absolute;
-  top: 0;
-  left: 0;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   width: 100%;
   z-index: 3;
 }
 
 .box.completed::after {
   background: linear-gradient(270deg, #039 0%, #0abe68 100%), #039;
+}
+
+.box.final::after {
+  background: #0abe68;
 }
 
 .box:last-child::after {
@@ -78,4 +106,8 @@
   font-style: normal;
   font-weight: 700;
   line-height: 22px;
+}
+
+.blue-small-box {
+  height: 56px;
 }

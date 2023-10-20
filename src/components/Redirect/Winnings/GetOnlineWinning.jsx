@@ -1,12 +1,30 @@
 import classes from "./GetWinning.module.css";
+import AmountOnlineWinnings from "./AmountOnlineWinnings";
 
-const GetOnlineWinning = () => {
+const GetOnlineWinning = props => {
   return (
-    <div className={classes.how__wrapper}>
-      <div className={classes["blue-box"]}>На сайте / В приложении</div>
-      <div className={classes["blue-box"]}>С помощью SMS</div>
-      <div className={classes["blue-box"]}>В приложении Beeline</div>
-    </div>
+    <>
+      {props.change ? (
+        <AmountOnlineWinnings />
+      ) : (
+        <>
+          <div
+            className={classes["blue-box"]}
+            onClick={() => {
+              props.onChangeAmount();
+              props.onPaint();
+            }}>
+            На сайте / В приложении
+          </div>
+          <div className={classes["blue-box"]} onClick={props.onChangeAmount}>
+            С помощью SMS
+          </div>
+          <div className={classes["blue-box"]} onClick={props.onChangeAmount}>
+            В приложении Beeline
+          </div>
+        </>
+      )}
+    </>
   );
 };
 

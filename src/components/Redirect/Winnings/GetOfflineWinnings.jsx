@@ -1,11 +1,32 @@
+import AmountOnlineWinnings from "./AmountOnlineWinnings";
 import classes from "./GetWinning.module.css";
 
-const GetOfflineWinning = () => {
+const GetOfflineWinning = props => {
   return (
-    <div className={classes.how__wrapper}>
-      <div className={classes["blue-box"]}>Точки продаж</div>
-      <div className={classes["blue-box"]}>В филиалах Казпочты</div>
-    </div>
+    <>
+      {props.change ? (
+        <AmountOnlineWinnings offlineSum={props.offlineSum} />
+      ) : (
+        <>
+          <div
+            className={classes["blue-box"]}
+            onClick={() => {
+              props.onChangeAmount();
+              props.onChangeSum();
+            }}>
+            Точки продаж
+          </div>
+          <div
+            className={classes["blue-box"]}
+            onClick={() => {
+              props.onChangeAmount();
+              props.onChangeSum();
+            }}>
+            В филиалах Казпочты
+          </div>
+        </>
+      )}
+    </>
   );
 };
 
