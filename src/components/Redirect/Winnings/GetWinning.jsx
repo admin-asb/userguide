@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { useEffect } from "react";
 import Container from "../../UI/Container";
 import classes from "./GetWinning.module.css";
-import GetWinning1 from "./GetWinning1";
 import GetOnlineWinning from "./GetOnlineWinning";
 import GetOfflineWinning from "./GetOfflineWinnings";
 
@@ -12,23 +11,43 @@ const GetWinning = () => {
   }, []);
 
   const [activeBox, setActiveBox] = useState(0);
-  const [completedBox, setCompletedBox] = useState(false);
   const [title, setTitle] = useState("Где был куплен билет?");
   const [onlineWinnings, setOnlineWinnings] = useState(false);
   const [offlineWinnings, setOfflineWinnings] = useState(false);
+  const [changeToAmount, setChangeToAmount] = useState(false);
+  const [offlineAmount, setOfflineAmount] = useState("");
 
   const onlineHandler = () => {
     setActiveBox(1);
-    setCompletedBox(true);
     setTitle("А поточнее?");
     setOnlineWinnings(true);
   };
 
   const offlineHandler = () => {
     setActiveBox(1);
-    setCompletedBox(true);
     setTitle("Где именно?");
     setOfflineWinnings(true);
+  };
+
+  const changeAmount = () => {
+    setActiveBox(2);
+    setTitle("Какого размера выигрыш?");
+    setChangeToAmount(true);
+  };
+
+  const changeSum = () => {
+    setOfflineAmount("100 000");
+  };
+
+  const handleLineColor = boxNum => {
+    setActiveBox(boxNum);
+
+    if (boxNum === 1) {
+      const firstBox = document.querySelector(`.${classes.box1}`);
+      if (firstBox) {
+        firstBox.classList.add(classes.final);
+      }
+    }
   };
 
   return (
@@ -37,6 +56,7 @@ const GetWinning = () => {
         <h2>Как получить выигрыш</h2>
         <div className={classes.transition}>
           <div
+<<<<<<< HEAD
             className={`${classes.box} ${
               completedBox ? classes.completed : ""
             } ${activeBox === 0 ? classes.active : ""}`}
@@ -50,20 +70,54 @@ const GetWinning = () => {
           >
             2
           </div>
+=======
+            className={`${classes.box} ${classes.box1} ${
+              activeBox > 0 ? classes.completed : ""
+            } ${activeBox === 0 ? classes.active : ""}`}></div>
           <div
-            className={`${classes.box} ${
+            className={`${classes.box} ${classes.box2} ${
+              activeBox > 1 ? classes.completed : ""
+            } ${activeBox === 1 ? classes.active : ""}`}></div>
+>>>>>>> dbfe4c1d60d5470b596c46b94e2c8a155057e9be
+          <div
+            className={`${classes.box} ${classes.box3} ${
               activeBox === 2 ? classes.active : ""
+<<<<<<< HEAD
             }`}
           >
             3
           </div>
+=======
+            }`}></div>
+>>>>>>> dbfe4c1d60d5470b596c46b94e2c8a155057e9be
         </div>
         <h3>{title}</h3>
-        {!onlineWinnings ? (
-          <GetWinning1 onOnline={onlineHandler} onOffline={offlineHandler} />
-        ) : (
-          <GetOnlineWinning />
-        )}
+        <div className={classes.how__wrapper}>
+          {onlineWinnings ? (
+            <GetOnlineWinning
+              change={changeToAmount}
+              onChangeAmount={changeAmount}
+              onPaint={handleLineColor}
+            />
+          ) : offlineWinnings ? (
+            <GetOfflineWinning
+              change={changeToAmount}
+              onChangeAmount={changeAmount}
+              offlineSum={offlineAmount}
+              onChangeSum={changeSum}
+            />
+          ) : (
+            <>
+              <div className={classes["blue-box"]} onClick={onlineHandler}>
+                Онлайн
+              </div>
+              <div className={classes["blue-box"]} onClick={offlineHandler}>
+                Точки продаж <br />
+                или Казпочта
+              </div>
+            </>
+          )}
+        </div>
       </div>
     </Container>
   );
