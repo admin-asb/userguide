@@ -39,7 +39,7 @@ const GetWinning = () => {
     setOfflineAmount("100 000");
   };
 
-  const handleLineColor = boxNum => {
+  const handleLineColor = (boxNum) => {
     setActiveBox(boxNum);
 
     if (boxNum === 1) {
@@ -56,40 +56,20 @@ const GetWinning = () => {
         <h2>Как получить выигрыш</h2>
         <div className={classes.transition}>
           <div
-<<<<<<< HEAD
-            className={`${classes.box} ${
-              completedBox ? classes.completed : ""
-            } ${activeBox === 0 ? classes.active : ""}`}
-          >
-            1
-          </div>
-          <div
-            className={`${classes.box} ${
-              activeBox === 1 ? classes.active : ""
-            }`}
-          >
-            2
-          </div>
-=======
             className={`${classes.box} ${classes.box1} ${
               activeBox > 0 ? classes.completed : ""
-            } ${activeBox === 0 ? classes.active : ""}`}></div>
+            } ${activeBox === 0 ? classes.active : ""}`}
+          ></div>
           <div
             className={`${classes.box} ${classes.box2} ${
               activeBox > 1 ? classes.completed : ""
-            } ${activeBox === 1 ? classes.active : ""}`}></div>
->>>>>>> dbfe4c1d60d5470b596c46b94e2c8a155057e9be
+            } ${activeBox === 1 ? classes.active : ""}`}
+          ></div>
           <div
             className={`${classes.box} ${classes.box3} ${
               activeBox === 2 ? classes.active : ""
-<<<<<<< HEAD
             }`}
-          >
-            3
-          </div>
-=======
-            }`}></div>
->>>>>>> dbfe4c1d60d5470b596c46b94e2c8a155057e9be
+          ></div>
         </div>
         <h3>{title}</h3>
         <div className={classes.how__wrapper}>
