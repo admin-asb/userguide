@@ -39,19 +39,22 @@ const GetWinning = () => {
           <div
             className={`${classes.box} ${
               completedBox ? classes.completed : ""
-            } ${activeBox === 0 ? classes.active : ""}`}>
+            } ${activeBox === 0 ? classes.active : ""}`}
+          >
             1
           </div>
           <div
             className={`${classes.box} ${
               activeBox === 1 ? classes.active : ""
-            }`}>
+            }`}
+          >
             2
           </div>
           <div
             className={`${classes.box} ${
               activeBox === 2 ? classes.active : ""
-            }`}>
+            }`}
+          >
             3
           </div>
         </div>
