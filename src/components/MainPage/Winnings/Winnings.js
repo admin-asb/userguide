@@ -26,7 +26,8 @@ const Winnings = () => {
       </div>{" "}
       <div
         className={classes["winning__box"]}
-        onClick={() => navCtx.onNavigate("get-win")}>
+        onClick={() => navCtx.onNavigate("get-win")}
+      >
         {" "}
         <p>
           {" "}
