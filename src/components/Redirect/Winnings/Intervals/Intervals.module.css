@@ -15,11 +15,13 @@ h3 span {
   background: #fff;
 }
 
-/* .info__wrapper p b {
-
-} */
+.info__wrapper p {
+  margin-top: 0;
+}
 
 .info__wrapper button {
+  background: #fff;
+  width: 100%;
   margin-top: 24px;
   padding: 18px 24px;
   border-radius: 12px;
@@ -33,4 +35,29 @@ h3 span {
   line-height: normal;
   letter-spacing: 0.28px;
   text-transform: uppercase;
+}
+
+.yellow-box {
+  margin-top: 16px;
+  padding: 16px;
+  border-radius: 12px;
+  border: 1px solid var(--background-stroke, #d2dcf0);
+  background: linear-gradient(
+      0deg,
+      rgba(255, 204, 0, 0.1) 0%,
+      rgba(255, 204, 0, 0.1) 100%
+    ),
+    #fff;
+}
+
+.yellow-box p {
+  margin-top: 0;
+  color: var(--ui-kit-react-black, #111318);
+  /* small regular */
+  font-family: Nunito;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 16px;
+  /* 114.286% */
 }

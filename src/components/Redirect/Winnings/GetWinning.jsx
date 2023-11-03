@@ -2,9 +2,8 @@ import React, { useState } from "react";
 import { useEffect } from "react";
 import Container from "../../UI/Container";
 import classes from "./GetWinning.module.css";
-import GetOnlineWinning from "./GetOnlineWinning";
-import GetOfflineWinning from "./GetOfflineWinnings";
-import WebsiteMin from "./Intervals/MinimumSum/WebsiteMin";
+import ProgressBox from "./ProgressBox";
+import Content from "./Content";
 
 const GetWinning = () => {
   useEffect(() => {
@@ -18,6 +17,9 @@ const GetWinning = () => {
   const [changeToAmount, setChangeToAmount] = useState(false);
   const [offlineAmount, setOfflineAmount] = useState("");
   const [websiteMin, setWebsiteMin] = useState(false);
+  const [websiteMedium, setWebsiteMedium] = useState(false);
+  const [websiteMaximum, setWebsiteMaximum] = useState(false);
+  const [isClicked, setIsClicked] = useState(false);
 
   const onlineHandler = () => {
     setActiveBox(1);
@@ -41,7 +43,22 @@ const GetWinning = () => {
     setOfflineAmount("100 000");
   };
 
-  const handleLineColor = (boxNum) => {
+  const websiteMinHandler = () => {
+    setWebsiteMin(true);
+    setTitle("До 20 700 ₸");
+  };
+
+  const websiteMediumHandler = () => {
+    setWebsiteMedium(true);
+    setTitle("От 20 700 ₸ до 250 000 ₸");
+  };
+
+  const websiteMaximumHandler = () => {
+    setWebsiteMaximum(true);
+    setTitle("Свыше 250 000 ₸");
+  };
+
+  const handleLineColor = boxNum => {
     setActiveBox(boxNum);
 
     if (boxNum === 2) {
@@ -52,79 +69,34 @@ const GetWinning = () => {
     }
   };
 
-  const websiteMinHandler = () => {
-    setWebsiteMin(true);
-    setTitle("До 20 700 ₸");
-  };
-
-  const renderContent = () => {
-    if (onlineWinnings) {
-      console.log("onlineWinning");
-      if (websiteMin) {
-        return <WebsiteMin webTitle={title} />;
-      } else {
-        return (
-          <GetOnlineWinning
-            change={changeToAmount}
-            onChangeAmount={changeAmount}
-            onPaint={() => handleLineColor(2)}
-            onlineTitle={title}
-            onWebsiteMin={websiteMinHandler}
-          />
-        );
-      }
-    } else if (offlineWinnings) {
-      console.log("offlineWinning");
-      return (
-        <GetOfflineWinning
-          change={changeToAmount}
-          onChangeAmount={changeAmount}
-          offlineSum={offlineAmount}
-          onChangeSum={changeSum}
-          onPaint={() => handleLineColor(2)}
-          offlineTitle={title}
-        />
-      );
-      // } else if (websiteMin) {
-      //   console.log("websiteMin");
-      //   return <WebsiteMin />;
-    } else {
-      console.log("default");
-      return (
-        <>
-          <h3>{title}</h3>
-          <div className={classes.how__wrapper}>
-            <div className={classes["blue-box"]} onClick={onlineHandler}>
-              Онлайн
-            </div>
-            <div className={classes["blue-box"]} onClick={offlineHandler}>
-              Точки продаж <br />
-              или Казпочта
-            </div>
-          </div>
-        </>
-      );
-    }
-  };
-
-  const renderBoxes = () => {
-    const boxClasses = [classes.box1, classes.box2, classes.box3];
-    return boxClasses.map((boxClass, index) => (
-      <div
-        key={index}
-        className={`${classes.box} ${boxClass} ${
-          activeBox > index ? classes.completed : ""
-        } ${activeBox === index ? classes.active : ""}`}
-      ></div>
-    ));
+  const handleIsClickedChange = () => {
+    setIsClicked(true);
   };
 
   return (
     <Container>
       <div className={classes.how}>
         <h2>Как получить выигрыш</h2>
-        <div className={classes.transition}>{renderBoxes()}</div>
-        {renderContent()}
+        <ProgressBox activeBox={activeBox} isClicked={isClicked} />
+        <Content
+          handleLineColor={handleLineColor}
+          title={title}
+          onlineWinnings={onlineWinnings}
+          offlineWinnings={offlineWinnings}
+          websiteMin={websiteMin}
+          websiteMedium={websiteMedium}
+          websiteMax={websiteMaximum}
+          changeToAmount={changeToAmount}
+          onlineHandler={onlineHandler}
+          offlineHandler={offlineHandler}
+          changeAmount={changeAmount}
+          offlineAmount={offlineAmount}
+          changeSum={changeSum}
+          websiteMinHandler={websiteMinHandler}
+          websiteMediumHandler={websiteMediumHandler}
+          websiteMaximumHandler={websiteMaximumHandler}
+          onClickedChange={handleIsClickedChange}
+        />
       </div>
     </Container>
   );
