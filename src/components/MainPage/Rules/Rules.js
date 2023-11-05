@@ -17,7 +17,8 @@ const Rules = () => {
         className={classes.rules__box}
         onClick={() => {
           navCtx.onNavigate("rules");
-        }}>
+        }}
+      >
         <img src={emojiIcon} alt="An emoji icon" />
         <p> Правила ответственной игры </p>{" "}
       </div>{" "}
@@ -25,7 +26,8 @@ const Rules = () => {
         className={classes.rules__box}
         onClick={() => {
           navCtx.onNavigate("rights");
-        }}>
+        }}
+      >
         <img src={shieldIcon} alt="Shield icon" />
         <p> Правовая информация, закон о лотерее </p>{" "}
       </div>{" "}
@@ -33,11 +35,12 @@ const Rules = () => {
         className={classes.rules__box}
         onClick={() => {
           navCtx.onNavigate("wallet-rules");
-        }}>
+        }}
+      >
         <img src={walletIcon} alt="Wallet icon" />
         <p> Правила пользования кошельком </p>{" "}
       </div>{" "}
-      <div className={classes.rules__box}>
+      <div className={classes.rules__box} style={{ filter: "grayscale(1)" }}>
         <img src={bonusIcon} alt="Bonus icon" />
         <p> Скачать правила бонусной программы </p>{" "}
         <img src={downloadIcon} alt="Icon for downloading" />

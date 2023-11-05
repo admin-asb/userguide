@@ -4,7 +4,10 @@ import salesPointPurchase2 from "../../../assets/offlinex2.png";
 
 const SalesPoint = () => {
   return (
-    <div className={`${classes.purchase__box} ${classes.offline}`}>
+    <div
+      className={`${classes.purchase__box} ${classes.offline}`}
+      style={{ filter: "grayscale(1)" }}
+    >
       {" "}
       <p> В точках продаж </p>{" "}
       <img

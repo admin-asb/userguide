@@ -1,7 +1,7 @@
 import AmountOnlineWinnings from "./AmountOnlineWinnings";
 import classes from "./GetWinning.module.css";
 
-const GetOfflineWinning = props => {
+const GetOfflineWinning = (props) => {
   const offlineWinningTitles = ["Точки продаж", "В филиалах Казпочты"];
 
   return (
@@ -9,7 +9,11 @@ const GetOfflineWinning = props => {
       <h3>{props.offlineTitle}</h3>
       <div className={classes.how__wrapper}>
         {props.change ? (
-          <AmountOnlineWinnings offlineSum={props.offlineSum} />
+          <AmountOnlineWinnings
+            offlineSum={props.offlineSum}
+            onClickedChange={props.onClickedChange}
+            onPrevent={props.onPrevent}
+          />
         ) : (
           <>
             {offlineWinningTitles.map((title, index) => (
@@ -19,8 +23,9 @@ const GetOfflineWinning = props => {
                 onClick={() => {
                   props.onChangeAmount();
                   props.onChangeSum();
-                  props.onPaint();
-                }}>
+                  props.onPaint(2);
+                }}
+              >
                 {title}
               </div>
             ))}

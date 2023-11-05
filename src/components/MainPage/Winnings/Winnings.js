@@ -12,7 +12,10 @@ const Winnings = () => {
   return (
     <section className={classes.winnings}>
       <h3> Выигрыши </h3>{" "}
-      <div className={classes["winning__box"]}>
+      <div
+        className={classes["winning__box"]}
+        style={{ filter: "grayscale(1)" }}
+      >
         {" "}
         <p>
           {" "}

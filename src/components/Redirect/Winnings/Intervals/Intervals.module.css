@@ -61,3 +61,13 @@ h3 span {
   line-height: 16px;
   /* 114.286% */
 }
+
+.info__wrapper span {
+  color: var(--ui-kit-react-blue, #1249b5);
+  /* bold */
+  font-family: Nunito;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 22px; /* 122.222% */
+}

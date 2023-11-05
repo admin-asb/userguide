@@ -23,6 +23,8 @@ const Content = ({
   websiteMaximumHandler,
   handleLineColor,
   onClickedChange,
+  onPrevent,
+  returned,
 }) => {
   if (onlineWinnings) {
     if (websiteMin) {
@@ -31,6 +33,8 @@ const Content = ({
       return <WebMedium webTitle={title} />;
     } else if (websiteMax) {
       return <WebMaximum webTitle={title} />;
+    } else if (returned) {
+      return;
     } else {
       return (
         <GetOnlineWinning
@@ -42,20 +46,27 @@ const Content = ({
           onWebMedium={websiteMediumHandler}
           onWebMax={websiteMaximumHandler}
           onClickedChange={onClickedChange}
+          onPrevent={onPrevent}
         />
       );
     }
   } else if (offlineWinnings) {
-    return (
-      <GetOfflineWinning
-        change={changeToAmount}
-        onChangeAmount={changeAmount}
-        offlineSum={offlineAmount}
-        onChangeSum={changeSum}
-        onPaint={() => handleLineColor(2)}
-        offlineTitle={title}
-      />
-    );
+    if (returned) {
+      return;
+    } else {
+      return (
+        <GetOfflineWinning
+          change={changeToAmount}
+          onChangeAmount={changeAmount}
+          offlineSum={offlineAmount}
+          onChangeSum={changeSum}
+          onPaint={handleLineColor}
+          offlineTitle={title}
+          onClickedChange={onClickedChange}
+          onPrevent={onPrevent}
+        />
+      );
+    }
   } else {
     return (
       <>

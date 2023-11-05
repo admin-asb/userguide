@@ -20,6 +20,7 @@ const GetWinning = () => {
   const [websiteMedium, setWebsiteMedium] = useState(false);
   const [websiteMaximum, setWebsiteMaximum] = useState(false);
   const [isClicked, setIsClicked] = useState(false);
+  const [returned, setReturned] = useState(false);
 
   const onlineHandler = () => {
     setActiveBox(1);
@@ -58,7 +59,7 @@ const GetWinning = () => {
     setTitle("Свыше 250 000 ₸");
   };
 
-  const handleLineColor = boxNum => {
+  const handleLineColor = (boxNum) => {
     setActiveBox(boxNum);
 
     if (boxNum === 2) {
@@ -71,6 +72,10 @@ const GetWinning = () => {
 
   const handleIsClickedChange = () => {
     setIsClicked(true);
+  };
+
+  const preventGoForward = () => {
+    setReturned(true);
   };
 
   return (
@@ -96,6 +101,8 @@ const GetWinning = () => {
           websiteMediumHandler={websiteMediumHandler}
           websiteMaximumHandler={websiteMaximumHandler}
           onClickedChange={handleIsClickedChange}
+          onPrevent={preventGoForward}
+          returned={returned}
         />
       </div>
     </Container>
